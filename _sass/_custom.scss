@@ -1,0 +1,289 @@
+/* ==========================================================================
+   Betty Zeng — museum / gallery aesthetic
+   Layered on top of the acad-homepage (Minimal Mistakes) theme.
+   Ported from the standalone portfolio design.
+   ========================================================================== */
+
+:root {
+  --wall: #edeae2;
+  --wall-mat: #f6f4ee;
+  --frame: #2a2b26;
+  --ink: #232420;
+  --ink-soft: #5c5d54;
+  --line: #d6d1c2;
+  --accent: #3d5443;
+  --accent-soft: #e2e6dd;
+  --brass: #a1802e;
+  --font-display: 'Cormorant', Georgia, 'Times New Roman', serif;
+  --font-body: 'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --wall: #17181a;
+    --wall-mat: #1e2020;
+    --frame: #a9a690;
+    --ink: #e8e6dd;
+    --ink-soft: #a4a294;
+    --line: #34362f;
+    --accent: #8fb59a;
+    --accent-soft: #202a22;
+    --brass: #cba653;
+  }
+}
+
+/* ---- Base ---- */
+body {
+  background: var(--wall);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.65;
+}
+
+#main { max-width: 1100px; }
+
+.page__content {
+  font-family: var(--font-body);
+  font-size: 1rem;
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+    &:hover { border-color: var(--accent); }
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    color: var(--ink);
+    text-wrap: balance;
+  }
+
+  /* section headers: Betty's `## Heading` lines */
+  h2 {
+    font-size: 1.9rem;
+    margin: 2.6em 0 0.8em;
+    padding-top: 1.2em;
+    border-top: 1px solid var(--line);
+  }
+  h1 { font-size: 2.3rem; }
+  h3 { font-size: 1.2rem; }
+
+  em { color: var(--ink); }
+  strong { color: var(--ink); }
+  hr { border-color: var(--line); }
+}
+
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* ---- Masthead / nav ---- */
+.masthead {
+  background: var(--wall-mat);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+  opacity: 0.98;
+}
+.greedy-nav {
+  background: transparent;
+  a {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+    &:hover { color: var(--accent); }
+  }
+  .visible-links a:before { background: var(--accent); }
+  button { background: var(--accent); }
+}
+.masthead__menu-home-item a { font-family: var(--font-display) !important; font-style: italic; font-size: 1.05rem !important; }
+
+/* ---- Author sidebar (profile / contact block) ---- */
+/* Geometry stays at the stock theme values (matches chengzhi-leo.github.io):
+   .sidebar 15.25% / .page 83% at $large, .sticky top:6em, avatar max-width 175px.
+   Only colour + type are themed here. */
+.author__avatar {
+  img {
+    /* stock theme sizing (max-width 175px, 5px padding, circle) — matches
+       chengzhi-leo.github.io; aspect-ratio + object-fit keep it a true circle
+       even if the source photo isn't square. */
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+    border-color: var(--line);
+  }
+}
+.author__name { font-family: var(--font-display); color: var(--ink); }
+.author__bio { color: var(--ink-soft); font-family: var(--font-body); }
+.author__urls {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  background: var(--wall); // match the page background
+  border-color: var(--line);
+  &:before { border-bottom-color: var(--line); }
+  &:after { border-bottom-color: var(--wall); }
+  li { color: var(--ink-soft); }
+  a { color: var(--ink-soft); text-decoration: none; &:hover { color: var(--accent); } }
+  i { color: var(--brass); }
+}
+
+/* ---- Shared bits ---- */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--brass);
+  display: block;
+  margin-bottom: 0.4em;
+}
+.slogan {
+  margin: 1.2em 0;
+  display: grid;
+  gap: 4px;
+  div {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.35rem;
+    color: var(--accent);
+  }
+}
+.sec-sub { color: var(--ink-soft); font-size: 0.97rem; }
+
+/* ---- Projects ---- */
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 1.4em 0; }
+.filter-btn {
+  font-family: var(--font-mono); font-size: 0.76rem; padding: 7px 14px;
+  border-radius: 100px; border: 1px solid var(--line);
+  background: none; color: var(--ink-soft); cursor: pointer;
+  &.active { background: var(--accent); border-color: var(--accent); color: var(--wall-mat); }
+  &:hover:not(.active) { border-color: var(--accent); color: var(--accent); }
+}
+
+.proj-grid { display: grid; gap: 16px; margin-bottom: 1em; }
+.proj-card {
+  border: 1px solid var(--frame);
+  background: var(--wall-mat);
+
+  > summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 16px 18px;
+    display: grid;
+    grid-template-columns: 1fr 22px;
+    gap: 16px;
+    align-items: center;
+    &::-webkit-details-marker { display: none; }
+  }
+  h3 { font-size: 1.15rem; margin: 0.2em 0; }
+}
+.proj-cat { font-family: var(--font-mono); font-size: 0.68rem; color: var(--ink-soft); }
+.proj-impact {
+  margin: 4px 0 0; color: var(--accent); font-size: 0.95rem;
+  font-family: var(--font-display); font-style: italic;
+}
+.proj-toggle {
+  font-family: var(--font-mono); font-size: 1.1rem; color: var(--ink-soft);
+  text-align: center; transition: transform 0.15s ease;
+}
+.proj-card[open] .proj-toggle { transform: rotate(45deg); color: var(--accent); }
+.proj-detail { padding: 0 18px 18px; display: grid; gap: 10px; }
+.piece-medium {
+  font-family: var(--font-mono); font-size: 0.76rem; color: var(--ink-soft);
+  b { color: var(--ink); font-weight: 500; }
+}
+.plaque-stat {
+  font-family: var(--font-display); font-style: italic; font-size: 1.05rem;
+  color: var(--accent);
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  padding: 8px 0;
+}
+.proj-detail p.desc { margin: 0; color: var(--ink-soft); }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag {
+  font-family: var(--font-mono); font-size: 0.68rem; color: var(--accent);
+  background: var(--accent-soft); padding: 3px 9px; border-radius: 100px;
+}
+
+/* ---- News & Talks: vertical timeline ---- */
+.vtimeline {
+  position: relative;
+  margin: 1.2em 0;
+  padding-left: 26px;
+  &::before {
+    content: ''; position: absolute; left: 4px; top: 8px; bottom: 8px;
+    width: 2px; background: var(--line);
+  }
+}
+.vt-item {
+  position: relative;
+  padding: 0 0 26px;
+  &:last-child { padding-bottom: 0; }
+  &::before {
+    content: ''; position: absolute; left: -26px; top: 6px; width: 10px; height: 10px;
+    border-radius: 50%; background: var(--wall-mat); border: 2px solid var(--accent);
+  }
+  &:first-child::before { background: var(--accent); }
+  h4 { font-family: var(--font-display); font-weight: 500; font-size: 1.1rem; margin: 6px 0 0; }
+  p { margin: 5px 0 0; color: var(--ink-soft); font-size: 0.92rem; }
+}
+.vt-meta { font-family: var(--font-mono); font-size: 0.76rem; color: var(--ink-soft); }
+.vt-kind {
+  font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.04em; text-transform: uppercase;
+  color: var(--accent); background: var(--accent-soft); padding: 3px 8px; border-radius: 100px;
+  display: inline-block; margin-left: 8px;
+}
+
+/* ---- Public engagement ---- */
+.off-frame { display: grid; margin: 1em 0; }
+.off-item {
+  display: grid; grid-template-columns: 110px 1fr; gap: 18px;
+  padding: 16px 0; border-bottom: 1px solid var(--line);
+  &:first-child { border-top: 1px solid var(--line); }
+  h4 { font-family: var(--font-display); font-weight: 500; font-size: 1.1rem; margin: 0; }
+  p.desc { margin: 6px 0 0; color: var(--ink-soft); font-size: 0.93rem; }
+}
+.off-when { font-family: var(--font-mono); font-size: 0.76rem; color: var(--ink-soft); padding-top: 3px; }
+.off-org { color: var(--accent); font-size: 0.9rem; margin-top: 2px; }
+
+/* ---- Education timeline ---- */
+.provenance {
+  position: relative; padding: 4px 0 14px 26px; margin: 1em 0;
+  &::before {
+    content: ''; position: absolute; left: 4px; top: 6px; bottom: 6px; width: 2px; background: var(--line);
+  }
+}
+.prov-item {
+  position: relative; padding: 0 0 26px;
+  &:last-child { padding-bottom: 0; }
+  &::before {
+    content: ''; position: absolute; left: -26px; top: 6px; width: 10px; height: 10px;
+    border-radius: 50%; background: var(--wall-mat); border: 2px solid var(--accent);
+  }
+  &:first-child::before { background: var(--accent); }
+  h3 { font-size: 1.15rem; margin: 0; }
+}
+.prov-org {
+  color: var(--accent); font-size: 0.95rem;
+  font-family: var(--font-display); font-style: italic; margin-top: 2px;
+}
+
+/* ---- Journey map (Leaflet) ---- */
+#journey-map {
+  height: 460px;
+  margin: 1.2em 0 0.6em;
+  border: 1px solid var(--frame);
+  background: var(--wall-mat);
+  z-index: 0;
+}
+.leaflet-container { font-family: var(--font-body); background: var(--wall-mat); }
+.leaflet-popup-content-wrapper, .leaflet-popup-tip { background: var(--wall-mat); color: var(--ink); }
+.leaflet-popup-content { font-size: 0.85rem; }
+.leaflet-popup-content strong { font-family: var(--font-display); font-size: 1rem; }
+.map-caption { font-family: var(--font-mono); font-size: 0.74rem; color: var(--ink-soft); }
+
+@media (max-width: 760px) {
+  .off-item { grid-template-columns: 1fr; gap: 4px; }
+  #journey-map { height: 340px; }
+  .proj-detail { padding-left: 18px; }
+}

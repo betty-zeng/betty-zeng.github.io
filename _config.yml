@@ -6,30 +6,31 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
-title                    : "Lorem ipsum"
-description              : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. "
-repository               : "RayeRen/acad-homepage.github.io"
+title                    : "Hui (Betty) Zeng"
+description              : "Business and Applied AI Consultant, and an entrepreneurial leader building AI systems with a social purpose."
+repository               : "betty-zeng/betty-zeng.github.io"  # TODO confirm GitHub user/repo
+url                      : "https://betty-zeng.github.io"  # TODO confirm custom domain
 google_scholar_stats_use_cdn : true
 
 # google analytics
-google_analytics_id      :  # get google_analytics_id from https://analytics.google.com/analytics/
+google_analytics_id      :  # TODO: paste GA4 Measurement ID, e.g. G-XXXXXXXXXX
 
 # SEO Related
-google_site_verification :  # get google_site_verification from https://search.google.com/search-console/about
-bing_site_verification   :  # get bing_site_verification from https://www.bing.com/webmasters/about
-baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.baidu.com/login/index?u=/site/index
+google_site_verification :  # TODO: from https://search.google.com/search-console/about
+bing_site_verification   :  # TODO: from https://www.bing.com/webmasters/about
+baidu_site_verification  :
 
 # Site Author
 author:
-  name             : "Lorem ipsum"
-  avatar           : "images/android-chrome-512x512.png"
-  bio              : "Lorem ipsum College"
-  location         : "Beijing, China"
+  name             : "Hui (Betty) Zeng"
+  avatar           : "images/profile.jpg"
+  bio              : "Business & Applied AI Consultant · Entrepreneurial leader"
+  location         : "Munich, Germany"
   employer         :
-  pubmed           : 
-  googlescholar    : "https://scholar.google.com/citations?user=YOUR_GOOGLE_SCHOLAR_ID"
-  email            : "Lorem@ipsum.com"
-  researchgate     :  # e.g., "https://www.researchgate.net/profile/yourprofile"
+  pubmed           :
+  googlescholar    :
+  email            : "betty.zeng.hui@gmail.com"  # TODO confirm preferred address
+  researchgate     :
   uri              :
   bitbucket        :
   codepen          :
@@ -37,13 +38,14 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : # e.g., "github username"
+  github           : "betty-zeng"  # TODO confirm GitHub username
   google_plus      :
   keybase          :
   instagram        :
   impactstory      : # e.g., "https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         : # e.g., "linkedin username"
+  linkedin         : "betty-zeng"
+  cv               : "/assets/cv.pdf"  # TODO: add the PDF at assets/cv.pdf
   dblp             : # e.g., "https://dblp.org/pid/xx/xxxx.html"
   orcid            : # e.g., "https://orcid.org/xxxx"
   pinterest        :
@@ -136,7 +138,7 @@ sass:
 
 # Outputting
 permalink: /:categories/:title/
-timezone: Asia/Shanghai # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Europe/Berlin # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Plugins
