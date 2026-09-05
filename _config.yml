@@ -8,8 +8,8 @@
 # Site Settings
 title                    : "Hui (Betty) Zeng"
 description              : "Business and Applied AI Consultant, and an entrepreneurial leader building AI systems with a social purpose."
-repository               : "betty-zeng/betty-zeng.github.io"  # TODO confirm GitHub user/repo
-url                      : "https://betty-zeng.github.io"  # TODO confirm custom domain
+repository               : "betty-zeng/betty-zeng.github.io"
+url                      : "https://betty-zeng.github.io"
 google_scholar_stats_use_cdn : true
 
 # google analytics
@@ -38,7 +38,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "betty-zeng"  # TODO confirm GitHub username
+  github           : "betty-zeng"
   google_plus      :
   keybase          :
   instagram        :
