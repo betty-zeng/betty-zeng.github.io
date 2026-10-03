@@ -182,6 +182,7 @@ body {
   margin: 4px 0 0; color: var(--accent); font-size: 0.95rem;
   font-family: var(--font-display); font-style: italic;
 }
+.proj-impact + .tags { margin-top: 8px; }
 .proj-toggle {
   font-family: var(--font-mono); font-size: 1.1rem; color: var(--ink-soft);
   text-align: center; transition: transform 0.15s ease;
